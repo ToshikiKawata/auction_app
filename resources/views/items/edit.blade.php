@@ -11,10 +11,10 @@
     @if ($errors->any())
     <div class="error">
         <p>
-            <b>{{ count($erroes) }}けんのエッラーがあります。</b>
+            <b>{{ count($errors) }}けんのエラーがあります。</b>
         </p>
         <ul>
-            @foreach ($erroes as $erroe)
+            @foreach ($errors->all() as $error)
                 <li>{{ $error }}</li>
             @endforeach
         </ul>
