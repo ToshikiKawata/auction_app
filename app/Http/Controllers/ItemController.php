@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Http\Requests\ItemRequest;
 
 class ItemController extends Controller
 {
@@ -26,7 +27,7 @@ class ItemController extends Controller
         $item = Item::find($id);
         return view('items.edit', ['item' => $item]);
     }
-    public function update(Request $request, $id)
+    public function update(ItemRequest $request, $id)
     {
         //元のデータを取得
         $item = Item::find($id);
@@ -43,7 +44,7 @@ class ItemController extends Controller
 
         return redirect('/items');
     }
-    public function store(Request $request)
+    public function store(ItemRequest $request)
     {
         //インスタンスの作成
         $item = new Item;
