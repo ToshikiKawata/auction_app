@@ -25,5 +25,8 @@
     <p>
         <img src="{{ $item->image_url }}">
     </p>
+
+    <!-- 商品のidを元に編集ページへ遷移する -->
+    <a href="/items/{{ $item->id }}/edit">編集する</a>
 </body>
 </html>
